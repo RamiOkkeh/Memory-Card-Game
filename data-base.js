@@ -27,28 +27,30 @@ function create(arr, fn) {
 		frame.append(elem1);
 	});
 }
+
 $(document).ready(function () {
 	$(".imgs").click(show);
 });
 
+var c = 2
+var click1;
+var arr = []
 function show(event){
 	var x = event.currentTarget.firstElementChild;
-	console.log(x.src)
 	$(x).show();
+	arr.push(x)
+	c -= 1
+	if (c === 0) {
+		console.log(arr)
+		if (arr[0].src !== arr[1].src) {
+			var arr0 = arr[0]
+			var arr1 = arr[1]
+			setTimeout(function(){$(arr0).hide(); $(arr1).hide()}, 1000)
+		}
+		arr = []
+		c = 2
+	}	
 }
-
-function Game(){
-	var x = {};
-	x.count = 2;
-	
-
-
-
-	return x;
-
-}
-
-
 
 
 
