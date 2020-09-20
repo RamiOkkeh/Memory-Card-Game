@@ -13,23 +13,51 @@ function each(coll, fn) {
 	}
 }
 
-
-// create the game interface
-var images = ["https://www.flaticon.com/svg/static/icons/svg/3456/3456656.svg", "https://www.flaticon.com/svg/static/icons/svg/3456/3456709.svg","https://www.flaticon.com/svg/static/icons/svg/3456/3456669.svg","https://www.flaticon.com/premium-icon/icons/svg/3456/3456847.svg","https://www.flaticon.com/premium-icon/icons/svg/3456/3456890.svg","https://www.flaticon.com/premium-icon/icons/svg/3456/3456805.svg","https://www.flaticon.com/premium-icon/icons/svg/3457/3457010.svg", "https://www.flaticon.com/premium-icon/icons/svg/3456/3456953.svg" ]
-function create(arr) {
-	each(arr, function(elem, i) {
+function create(arr, fn) {
+	each(arr, function (elem, i) {
 		var frame = $('#frame');
 		var elem1 = $('<div class="imgs"></div>');
-		var img1 = $('<img scr='+images[elem]+' class="img1">')
-		if(elem > 7){
-			elem -= 8;
+		if (i > 7) {
+			i -= 8;
 		}
-		// elem1.addClass("m"+elem);
-		elem1.append(img1)
-		console.log(images[elem])
+		var img = $('<img class="img1">');
+		img.attr("src", images[i]);
+		img.css({ "object-fit": "cover", "width": "100%", "height": "100%" })
+		elem1.append(img);
 		frame.append(elem1);
 	});
 }
+$(document).ready(function () {
+	$(".imgs").click(show);
+});
+
+function show(event){
+	var x = event.currentTarget.firstElementChild;
+	console.log(x.src)
+	$(x).show();
+}
+
+function Game(){
+	var x = {};
+	x.count = 2;
+	
+
+
+
+	return x;
+
+}
+
+
+
+
+
+
+// create the game interface
+var images = ["https://www.flaticon.com/svg/static/icons/svg/3456/3456656.svg", "https://www.flaticon.com/svg/static/icons/svg/3456/3456709.svg","https://www.flaticon.com/svg/static/icons/svg/3456/3456669.svg","https://www.flaticon.com/premium-icon/icons/svg/3456/3456847.svg","https://www.flaticon.com/premium-icon/icons/svg/3456/3456890.svg","https://www.flaticon.com/premium-icon/icons/svg/3456/3456805.svg","https://www.flaticon.com/premium-icon/icons/svg/3457/3457010.svg", "https://www.flaticon.com/premium-icon/icons/svg/3456/3456953.svg" ]
+
+
+
 
 
 
