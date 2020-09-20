@@ -20,7 +20,7 @@ function create(arr, fn) {
 		if (i > 7) {
 			i -= 8;
 		}
-		var img = $('<img class="img1">');
+		var img = $('<img class="img1" id="'+elem+'">');
 		img.attr("src", images[i]);
 		img.css({ "object-fit": "cover", "width": "100%", "height": "100%" })
 		elem1.append(img);
@@ -37,14 +37,17 @@ var click1;
 var arr = []
 function show(event){
 	var x = event.currentTarget.firstElementChild;
-	$(x).show();
 	arr.push(x)
+	var arr0 = arr[0]
+	var arr1 = arr[1]
+	if (arr1 && arr0.id === arr1.id) {
+		c++
+		arr.pop()
+	} else $(x).show();
 	c -= 1
 	if (c === 0) {
 		console.log(arr)
 		if (arr[0].src !== arr[1].src) {
-			var arr0 = arr[0]
-			var arr1 = arr[1]
 			setTimeout(function(){$(arr0).hide(); $(arr1).hide()}, 1000)
 		}
 		arr = []
