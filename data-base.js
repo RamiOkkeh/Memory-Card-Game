@@ -13,24 +13,39 @@ function each(coll, fn) {
 	}
 }
 
+function randomize(min, max){
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function create(arr, fn) {
+	var imagesCopy = images.slice(0);
 	each(arr, function (elem, i) {
 		var frame = $('#frame');
-		var elem1 = $('<div class="imgs"></div>');
+		var elem1 = $('<div class="imgs back"></div>');
 		if (i > 7) {
 			i -= 8;
 		}
+
+
 		var img = $('<img class="img1" id="'+elem+'">');
-		img.attr("src", images[i]);
+		var rnd = randomize(0, imagesCopy.length - 1);
+		img.attr("src", imagesCopy[rnd]);
+		imagesCopy.splice(rnd, 1);
+		if (imagesCopy.length === 0){
+			imagesCopy = images.slice(0);
+		}
+
 		img.css({ "object-fit": "cover", "width": "100%", "height": "100%" })
 		elem1.append(img);
 		frame.append(elem1);
 	});
 }
 
+
 $(document).ready(function () {
 	$(".imgs").click(show);
 });
+
 
 var c = 2
 var click1;
@@ -41,14 +56,15 @@ function show(event){
 	var arr0 = arr[0]
 	var arr1 = arr[1]
 	if (arr1 && arr0.id === arr1.id) {
-		c++
-		arr.pop()
-	} else $(x).show();
+		c++;
+		arr.pop();
+	} else $(x).show(); $(x).parent().removeClass("back");
 	c -= 1
 	if (c === 0) {
 		console.log(arr)
 		if (arr[0].src !== arr[1].src) {
-			setTimeout(function(){$(arr0).hide(); $(arr1).hide()}, 1000)
+			$("#hide").show();
+			setTimeout(function () { $(arr0).hide(); $(arr1).hide(); $("#hide").hide(); $(arr0).parent().addClass("back"); $(arr1).parent().addClass("back") }, 1000);
 		}
 		arr = []
 		c = 2
