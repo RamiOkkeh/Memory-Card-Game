@@ -13,19 +13,40 @@ function each(coll, fn) {
 	}
 }
 
+function reduce(arr, fn, start) {
+  var acc = start
+  each(arr, function(elem, i) {
+    acc = fn(acc, elem)
+  })
+  return acc
+}
+
+function range(min, max) {
+	var arr = []
+	if (max === undefined) {
+		max = min
+		min = 0
+	}
+	for (var e = min; e < max; e++) {
+		arr.push(e)
+	}
+	return arr
+}
+
 function randomize(min, max){
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function create(arr, fn) {
 	var imagesCopy = images.slice(0);
+	$('#frame').empty();
 	each(arr, function (elem, i) {
+		
 		var frame = $('#frame');
 		var elem1 = $('<div class="imgs back"></div>');
 		if (i > 7) {
 			i -= 8;
 		}
-
 
 		var img = $('<img class="img1" id="'+elem+'">');
 		var rnd = randomize(0, imagesCopy.length - 1);
@@ -35,22 +56,29 @@ function create(arr, fn) {
 			imagesCopy = images.slice(0);
 		}
 
-		img.css({ "object-fit": "cover", "width": "100%", "height": "100%" })
 		elem1.append(img);
 		frame.append(elem1);
 	});
+	$(document).ready(function () {
+	$(".imgs").click(newGame);
+});
+	$('.img1').hide();
+	$("#hide").hide();
 }
 
+var newGame = Game()
 
-$(document).ready(function () {
-	$(".imgs").click(show);
-});
 
+
+function Game() {
 
 var c = 2
 var click1;
 var arr = []
-function show(event){
+var best;
+var attempt = 1
+var end = 0
+ return function show(event){
 	var x = event.currentTarget.firstElementChild;
 	arr.push(x)
 	var arr0 = arr[0]
@@ -61,19 +89,22 @@ function show(event){
 	} else $(x).show(); $(x).parent().removeClass("back");
 	c -= 1
 	if (c === 0) {
-		console.log(arr)
 		if (arr[0].src !== arr[1].src) {
 			$("#hide").show();
-			setTimeout(function () { $(arr0).hide(); $(arr1).hide(); $("#hide").hide(); $(arr0).parent().addClass("back"); $(arr1).parent().addClass("back") }, 1000);
-		}
+			setTimeout(function () { $(arr0).hide(); $(arr1).hide(); $("#hide").hide(); $(arr0).parent().addClass("back"); $(arr1).parent().addClass("back") }, 600);
+		} else {$(arr0).parent().attr("onclick", null).off("click"); $(arr0).parent().css("background-color", "green"); $(arr1).parent().attr("onclick", null).off("click"); $(arr1).parent().addClass("correct"); end++}
 		arr = []
 		c = 2
+		$("h2").html("Score: "+attempt++)
+		if (end === 0) {
+			end = 0
+			var restart = $("<input id='restart' type='button' value='Start again'>")
+			$('#frame').append(restart)
+			$('#restart').on('click',function() { console.log("hello"); create(range(1, 17)) } )
+		}
 	}	
 }
-
-
-
-
+}
 // create the game interface
 var images = ["https://www.flaticon.com/svg/static/icons/svg/3456/3456656.svg", "https://www.flaticon.com/svg/static/icons/svg/3456/3456709.svg","https://www.flaticon.com/svg/static/icons/svg/3456/3456669.svg","https://www.flaticon.com/premium-icon/icons/svg/3456/3456847.svg","https://www.flaticon.com/premium-icon/icons/svg/3456/3456890.svg","https://www.flaticon.com/premium-icon/icons/svg/3456/3456805.svg","https://www.flaticon.com/premium-icon/icons/svg/3457/3457010.svg", "https://www.flaticon.com/premium-icon/icons/svg/3456/3456953.svg" ]
 
