@@ -48,9 +48,6 @@ $(document).ready(function () {
 });
 
 
-
-
-
 var c = 2
 var click1;
 var arr = []
@@ -67,7 +64,8 @@ function show(event){
 	if (c === 0) {
 		console.log(arr)
 		if (arr[0].src !== arr[1].src) {
-			setTimeout(function(){$(arr0).hide(); $(arr1).hide()}, 1000)
+			$("#hide").show();
+			setTimeout(function () { $(arr0).hide(); $(arr1).hide(); $("#hide").hide() }, 1000);
 		}
 		arr = []
 		c = 2
