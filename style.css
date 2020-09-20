@@ -20,14 +20,21 @@ body {
 }
 .imgs {
 	margin: 4px;
-	width: 100px;
-	height: 100px;
+	width: 90px;
+	height: 90px;
 	padding: 10px;
-	background-color: red;
 	border: 2px black solid;
+	background-color: #D580FF;
 	/* box-sizing: border-box; */
-	
 }
+
+.back{
+	background-image:url("https://image.flaticon.com/icons/png/512/3162/3162148.png");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: center;
+}
+
 .img1 {
 	object-fit: cover;
 	width: 100%;

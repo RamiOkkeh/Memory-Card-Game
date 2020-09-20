@@ -21,7 +21,7 @@ function create(arr, fn) {
 	var imagesCopy = images.slice(0);
 	each(arr, function (elem, i) {
 		var frame = $('#frame');
-		var elem1 = $('<div class="imgs"></div>');
+		var elem1 = $('<div class="imgs back"></div>');
 		if (i > 7) {
 			i -= 8;
 		}
@@ -42,7 +42,6 @@ function create(arr, fn) {
 }
 
 
-
 $(document).ready(function () {
 	$(".imgs").click(show);
 });
@@ -57,15 +56,15 @@ function show(event){
 	var arr0 = arr[0]
 	var arr1 = arr[1]
 	if (arr1 && arr0.id === arr1.id) {
-		c++
-		arr.pop()
-	} else $(x).show();
+		c++;
+		arr.pop();
+	} else $(x).show(); $(x).parent().removeClass("back");
 	c -= 1
 	if (c === 0) {
 		console.log(arr)
 		if (arr[0].src !== arr[1].src) {
 			$("#hide").show();
-			setTimeout(function () { $(arr0).hide(); $(arr1).hide(); $("#hide").hide() }, 1000);
+			setTimeout(function () { $(arr0).hide(); $(arr1).hide(); $("#hide").hide(); $(arr0).parent().addClass("back"); $(arr1).parent().addClass("back") }, 1000);
 		}
 		arr = []
 		c = 2
