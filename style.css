@@ -2,3 +2,10 @@
 	display: flex;
 	justify-content: center;
 }
+#main-body {
+	background-color: #926ea9;
+	height: 100%
+}
+body {
+	background-color: #ffcc66;
+}
