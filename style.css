@@ -28,3 +28,56 @@ body {
 	/* box-sizing: border-box; */
 	
 }
+.img1 {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+.m1 {
+	background-image: url("https://www.flaticon.com/svg/static/icons/svg/3456/3456656.svg");
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: center;
+}
+.m2 {
+	background-image: url("https://www.flaticon.com/svg/static/icons/svg/3456/3456709.svg");
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: center;
+}
+.m3 {
+	background-image: url("https://www.flaticon.com/svg/static/icons/svg/3456/3456669.svg");
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: center;
+}
+.m4 {
+	background-image: url("https://www.flaticon.com/premium-icon/icons/svg/3456/3456847.svg");
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: center;
+}
+.m5 {
+	background-image: url("https://www.flaticon.com/premium-icon/icons/svg/3456/3456890.svg");
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: center;
+}
+.m6 {
+	background-image: url("https://www.flaticon.com/premium-icon/icons/svg/3456/3456805.svg");
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: center;
+}
+.m7 {
+	background-image: url("https://www.flaticon.com/premium-icon/icons/svg/3457/3457010.svg");
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: center;
+}
+.m8 {
+	background-image: url("https://www.flaticon.com/premium-icon/icons/svg/3456/3456953.svg");
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: center;
+}
