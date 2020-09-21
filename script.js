@@ -9,9 +9,9 @@ var newGame = Game(images)
 // creating and recreating the game interface
 // ======================================================
 function create(arr) {
-
+	$("#frame").css({ gridTemplateColumns: "auto auto auto auto" })
 	// making copy of img sources
-	var imagesCopy = images.slice(0);
+	var imagesCopy = randomImages(arr.length / 2);
 	// removing all elements from frame
 	$('#frame').empty();
 	$('#restart').remove()
@@ -38,10 +38,10 @@ function create(arr) {
 	// asigning img containers onclick to the new game loop
 	$(document).ready(function () {
 	$(".imgs").click(newGame);
-	});
-	// hiding imgs on game start
-	$('.img1').hide();
-	$("#hide").hide();
+		// hiding imgs on game start
+		$('.img1').hide();
+		$("#hide").hide();
+	});	
 }
 
 // defining game loop
@@ -63,21 +63,40 @@ function Game(imgArr) {
 		if (arr1 && arr0.id === arr1.id) {
 			counter++;
 			arr.pop();
-		} /*display clicked img*/ else $(x).show(); $(x).parent().removeClass("back");
+		} 
+		/*display clicked img*/ 
+		else {
+			$(x).show();
+		 	$(x).parent().removeClass("back");
+		}
 		counter -= 1
+		
 		// when trying to match 2 imgs
 		if (counter === 0) {
 			// chack if the 2 imgs are the same
 			if (arr[0].src !== arr[1].src) {
 				// if they are not, give the player a some time to view them then hide them again
 				$("#hide").show();
-				setTimeout(function () { $(arr0).hide(); $(arr1).hide(); $("#hide").hide(); $(arr0).parent().addClass("back"); $(arr1).parent().addClass("back") }, 500);
+				setTimeout(function () { 
+					$(arr0).hide();
+					$(arr1).hide(); 
+					$("#hide").hide(); 
+					$(arr0).parent().addClass("back"); 
+					$(arr1).parent().addClass("back") }, 500);
 
-			} /*if they are the same do all this-->*/ else {$(arr0).parent().attr("onclick", null).off("click"); $(arr0).parent().css("background-color", "green"); $(arr1).parent().attr("onclick", null).off("click"); $(arr1).parent().addClass("correct"); end++}
+			} /*if they are the same do all this-->*/ 
+			else {
+				$(arr0).parent().attr("onclick", null).off("click"); 
+				$(arr0).parent().css("background-color", "green"); 
+				$(arr1).parent().attr("onclick", null).off("click"); 
+				$(arr1).parent().addClass("correct"); 
+				end++;
+			}
 			// after game loop ends, reset these vaslues
 			arr = []
 			counter = 2
 			$("#score").html("Score: "+(++attempt))
+
 			// check if the player found all imgs
 			if (end === fin) {
 				// if so, create a restart button
@@ -99,4 +118,11 @@ function Game(imgArr) {
 			}
 		}
 	}
+}
+
+function hard(){
+	create(range(24));
+	$("#frame").css({ gridTemplateColumns: "auto auto auto auto auto auto"})
+	
+
 }
