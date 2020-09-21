@@ -45,7 +45,7 @@ function create(arr, imgNum) {
 	$(document).ready(function () {
 		$(".imgs").click(newGame);
 		// hiding imgs on game start
-		$('.img1').hide();
+		//$('.img1').hide();
 		$("#hide").hide();
 	});	
 }
