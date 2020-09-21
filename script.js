@@ -1,15 +1,20 @@
 // executing function:
 // ==========================
 // starting the game the first time
-create(range(16))
-// creating game loop
-var newGame = Game(images)
+create(range(16), 8)
+
 
 
 // creating and recreating the game interface
 // ======================================================
-function create(arr) {
+function create(arr, imgNum) {
+	// creating game loop
+	var newGame = Game(imgNum)
+	if (imgNum === 8) {
 	$("#frame").css({ gridTemplateColumns: "auto auto auto auto" })
+	} else {
+		$("#frame").css({ gridTemplateColumns: "auto auto auto auto auto auto" })
+	}
 	// making copy of img sources
 	var imagesCopy = randomImages(arr.length / 2);
 	// removing all elements from frame
@@ -39,21 +44,22 @@ function create(arr) {
 	$(document).ready(function () {
 	$(".imgs").click(newGame);
 		// hiding imgs on game start
-		$('.img1').hide();
+		// $('.img1').hide();
 		$("#hide").hide();
 	});	
 }
 
 // defining game loop
-function Game(imgArr) {
+function Game(imgNum) {
 	//click counter
 	var counter = 2
 	var arr = []
 	var attempt = 0
 	var end = 0
-	var best = 999999
-	var fin = imgArr.length / 2
+	var best =  999999
+	var fin = imgNum
 	return function(event){
+		console.log($("#best").text()[$("#best").text().length - 1])
 		// current img tag variable
 		var x = event.currentTarget.firstElementChild;
 		arr.push(x)
@@ -99,10 +105,11 @@ function Game(imgArr) {
 
 			// check if the player found all imgs
 			if (end === fin) {
+				best = ($("#best").text()[$("#best").text().length - 1] || 999999)
 				// if so, create a restart button
 				var restart = $("<input id='restart' type='button' value='Start again'>")
 				$('#frame').after(restart)
-				$('#restart').on('click',function() { create(range(imgArr.length)) })
+				$('#restart').on('click',function() { create(range(imgNum * 2), imgNum) })
 				// and check personal score
 				if (attempt < best) {
 					best = attempt
@@ -121,8 +128,6 @@ function Game(imgArr) {
 }
 
 function hard(){
-	create(range(24));
-	$("#frame").css({ gridTemplateColumns: "auto auto auto auto auto auto"})
-	
-
+	create(range(24), 12);
+	$("#best").html("")
 }

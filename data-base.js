@@ -3,10 +3,7 @@
 var images = ["https://www.flaticon.com/svg/static/icons/svg/3456/3456656.svg", "https://www.flaticon.com/svg/static/icons/svg/3456/3456709.svg","https://www.flaticon.com/svg/static/icons/svg/3456/3456669.svg","https://www.flaticon.com/premium-icon/icons/svg/3456/3456847.svg","https://www.flaticon.com/premium-icon/icons/svg/3456/3456890.svg","https://www.flaticon.com/premium-icon/icons/svg/3456/3456805.svg","https://www.flaticon.com/premium-icon/icons/svg/3457/3457010.svg", "https://www.flaticon.com/premium-icon/icons/svg/3456/3456953.svg", "https://www.flaticon.com/svg/static/icons/svg/3456/3456656.svg", "https://www.flaticon.com/svg/static/icons/svg/3456/3456709.svg","https://www.flaticon.com/svg/static/icons/svg/3456/3456669.svg","https://www.flaticon.com/premium-icon/icons/svg/3456/3456847.svg","https://www.flaticon.com/premium-icon/icons/svg/3456/3456890.svg","https://www.flaticon.com/premium-icon/icons/svg/3456/3456805.svg","https://www.flaticon.com/premium-icon/icons/svg/3457/3457010.svg", "https://www.flaticon.com/premium-icon/icons/svg/3456/3456953.svg" ]
 
 
-var imagesSrc = ["https://www.flaticon.com/svg/static/icons/svg/3456/3456656.svg", "https://www.flaticon.com/svg/static/icons/svg/3456/3456709.svg", "https://www.flaticon.com/svg/static/icons/svg/3456/3456669.svg", "https://www.flaticon.com/premium-icon/icons/svg/3456/3456847.svg", "https://www.flaticon.com/premium-icon/icons/svg/3456/3456890.svg", "https://www.flaticon.com/premium-icon/icons/svg/3456/3456805.svg", "https://www.flaticon.com/premium-icon/icons/svg/3457/3457010.svg", "https://www.flaticon.com/premium-icon/icons/svg/3456/3456953.svg",
-	"https://www.flaticon.com/premium-icon/icons/svg/3437/3437497.svg", "https://www.flaticon.com/premium-icon/icons/svg/3437/3437492.svg", "https://www.flaticon.com/premium-icon/icons/svg/3437/3437488.svg", "https://www.flaticon.com/premium-icon/icons/svg/3437/3437514.svg", "https://www.flaticon.com/premium-icon/icons/svg/3437/3437526.svg", "https://www.flaticon.com/premium-icon/icons/svg/3437/3437502.svg", "https://www.flaticon.com/premium-icon/icons/svg/3437/3437541.svg", "https://www.flaticon.com/premium-icon/icons/svg/3437/3437552.svg"
-
-]
+var imagesSrc = ["https://www.flaticon.com/svg/static/icons/svg/3456/3456656.svg", "https://www.flaticon.com/svg/static/icons/svg/3456/3456709.svg", "https://www.flaticon.com/svg/static/icons/svg/3456/3456669.svg", "https://www.flaticon.com/premium-icon/icons/svg/3456/3456847.svg", "https://www.flaticon.com/premium-icon/icons/svg/3456/3456890.svg", "https://www.flaticon.com/premium-icon/icons/svg/3456/3456805.svg", "https://www.flaticon.com/premium-icon/icons/svg/3457/3457010.svg", "https://www.flaticon.com/premium-icon/icons/svg/3456/3456953.svg","https://www.flaticon.com/premium-icon/icons/svg/3437/3437497.svg", "https://www.flaticon.com/premium-icon/icons/svg/3437/3437492.svg", "https://www.flaticon.com/premium-icon/icons/svg/3437/3437488.svg", "https://www.flaticon.com/premium-icon/icons/svg/3437/3437514.svg", "https://www.flaticon.com/premium-icon/icons/svg/3437/3437526.svg", "https://www.flaticon.com/premium-icon/icons/svg/3437/3437502.svg", "https://www.flaticon.com/premium-icon/icons/svg/3437/3437541.svg", "https://www.flaticon.com/premium-icon/icons/svg/3437/3437552.svg"]
 
 
 // helper functions 
@@ -56,7 +53,7 @@ function randomImages(numberOfImages = 8) {
 	var arr = [];
 	var imgSrc = imagesSrc.slice(0);
 	for (var i = 0; i < numberOfImages; i++) {
-		var rand = randomize(0, numberOfImages );
+		var rand = randomize(0, imgSrc.length - 1);
 		arr[i] = imgSrc[rand];
 		imgSrc.splice(rand, 1);
 	}
