@@ -4,7 +4,8 @@
 }
 #main-body {
 	background-color: #926ea9;
-	height: 100%
+	height: 100%;
+	padding-bottom: 20px;
 }
 body {
 	background-color: #ffcc66;
@@ -26,7 +27,6 @@ body {
 	border: 2px black solid;
 	background-color: #D580FF;
 	transition: background-color 1s;
-	/* box-sizing: border-box; */
 }
 .correct {
 	background-color: green;
@@ -43,72 +43,26 @@ body {
 	width: 100%;
 	height: 100%;
 }
-h2 {
-	text-align: center;
-	padding: 15px 15px 30px 15px;
+#scores {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+#scores * {
+	margin: 0px 10px 0px 10px; 
 }
 #restart {
-	display: grid;
-	justify-content: center;
+	margin-left: 45%;
+	margin-top: 10px;
+	width: 10%;
+	height: 30px;
 }
 #hide{
 	position:absolute; 
 	top: 20%;
-	/* left: 30%; */
 	height: 550px;
 	width: 99%;
 	background-color: blue;
 	z-index: 1;
 	opacity: 0;
 }
-
-
-
-/* .m1 {
-	background-image: url("https://www.flaticon.com/svg/static/icons/svg/3456/3456656.svg");
-	background-repeat: no-repeat;
-	background-size: 80%;
-	background-position: center;
-}
-.m2 {
-	background-image: url("https://www.flaticon.com/svg/static/icons/svg/3456/3456709.svg");
-	background-repeat: no-repeat;
-	background-size: 80%;
-	background-position: center;
-}
-.m3 {
-	background-image: url("https://www.flaticon.com/svg/static/icons/svg/3456/3456669.svg");
-	background-repeat: no-repeat;
-	background-size: 80%;
-	background-position: center;
-}
-.m4 {
-	background-image: url("https://www.flaticon.com/premium-icon/icons/svg/3456/3456847.svg");
-	background-repeat: no-repeat;
-	background-size: 80%;
-	background-position: center;
-}
-.m5 {
-	background-image: url("https://www.flaticon.com/premium-icon/icons/svg/3456/3456890.svg");
-	background-repeat: no-repeat;
-	background-size: 80%;
-	background-position: center;
-}
-.m6 {
-	background-image: url("https://www.flaticon.com/premium-icon/icons/svg/3456/3456805.svg");
-	background-repeat: no-repeat;
-	background-size: 80%;
-	background-position: center;
-}
-.m7 {
-	background-image: url("https://www.flaticon.com/premium-icon/icons/svg/3457/3457010.svg");
-	background-repeat: no-repeat;
-	background-size: 80%;
-	background-position: center;
-}
-.m8 {
-	background-image: url("https://www.flaticon.com/premium-icon/icons/svg/3456/3456953.svg");
-	background-repeat: no-repeat;
-	background-size: 80%;
-	background-position: center;
-} */
