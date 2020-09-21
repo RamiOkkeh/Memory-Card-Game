@@ -1,7 +1,7 @@
 // executing function:
 // ==========================
 // starting the game the first time
-create(range(16), 8)
+create(range(16), 8);
 
 
 
@@ -9,14 +9,15 @@ create(range(16), 8)
 // ======================================================
 function create(arr, imgNum) {
 	// creating game loop
-	var newGame = Game(imgNum)
+	var newGame = Game(imgNum);
+	// setting the style of the grid according to the game level
 	if (imgNum === 8) {
-	$("#frame").css({ gridTemplateColumns: "auto auto auto auto" })
+		$("#frame").css({ gridTemplateColumns: "auto auto auto auto" })
 	} else {
 		$("#frame").css({ gridTemplateColumns: "auto auto auto auto auto auto" })
 	}
 	// making copy of img sources
-	var imagesCopy = randomImages(arr.length / 2);
+	var imagesCopy = randomImages(imgNum);
 	// removing all elements from frame
 	$('#frame').empty();
 	$('#restart').remove()
@@ -42,9 +43,9 @@ function create(arr, imgNum) {
 	});
 	// asigning img containers onclick to the new game loop
 	$(document).ready(function () {
-	$(".imgs").click(newGame);
+		$(".imgs").click(newGame);
 		// hiding imgs on game start
-		// $('.img1').hide();
+		$('.img1').hide();
 		$("#hide").hide();
 	});	
 }
@@ -52,14 +53,14 @@ function create(arr, imgNum) {
 // defining game loop
 function Game(imgNum) {
 	//click counter
-	var counter = 2
-	var arr = []
-	var attempt = 0
-	var end = 0
-	var best =  999999
-	var fin = imgNum
+	var counter = 2; 
+	var arr = [];
+	var attempt = 0;
+	var end = 0;
+	var best =  999999;
+	var fin = imgNum;
 	return function(event){
-		console.log($("#best").text()[$("#best").text().length - 1])
+		//console.log($("#best").text()[$("#best").text().length - 1])
 		// current img tag variable
 		var x = event.currentTarget.firstElementChild;
 		arr.push(x)
@@ -75,7 +76,7 @@ function Game(imgNum) {
 			$(x).show();
 		 	$(x).parent().removeClass("back");
 		}
-		counter -= 1
+		counter -= 1;
 		
 		// when trying to match 2 imgs
 		if (counter === 0) {
@@ -105,7 +106,7 @@ function Game(imgNum) {
 
 			// check if the player found all imgs
 			if (end === fin) {
-				best = ($("#best").text()[$("#best").text().length - 1] || 999999)
+				best = ($("#best").text().split(" ")[1] || 999999)
 				// if so, create a restart button
 				var restart = $("<input id='restart' type='button' value='Start again'>")
 				$('#frame').after(restart)
@@ -115,19 +116,34 @@ function Game(imgNum) {
 					best = attempt
 
 					// DOM method:
-					document.getElementById("best").innerHTML = 'Personal Best: '+attempt
+					document.getElementById("best").innerHTML = 'Personal Best: ' + attempt;
 				}
 				// at the end of the game reset these values
-				attempt = 0
-				end = 0
-				arr = []
-				counter = 2
+				attempt = 0;
+				end = 0;
+				arr = [];
+				counter = 2;
 			}
 		}
 	}
 }
 
+//function for button normal 
+function normal(){
+	create(range(16), 8);
+	$("#best").html("");
+}
+
+//function for button hard 
 function hard(){
 	create(range(24), 12);
-	$("#best").html("")
+	$("#best").html("");
 }
+
+
+//randomizing images and their places
+//placing and styling the grid
+//keep track of the user score and personal
+//hanlde user errors and prevent them from breaking the game (ex: prevent three clicks on a row)
+//add a multiple difficulties
+//add start again option 
