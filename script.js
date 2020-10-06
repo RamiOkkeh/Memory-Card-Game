@@ -1,6 +1,6 @@
 // executing function:
 // ==========================
-// starting the game the first time
+// starting the game the first time:
 create(range(16), 8);
 
 
@@ -42,12 +42,12 @@ function create(arr, imgNum) {
 		frame.append(elem1);
 	});
 	// asigning img containers onclick to the new game loop
-	$(document).ready(function () {
+	// $(document).ready(function () {
 		$(".imgs").click(newGame);
 		// hiding imgs on game start
-		//$('.img1').hide();
+		$('.img1').hide();
 		$("#hide").hide();
-	});	
+	// });	
 }
 
 // defining game loop
