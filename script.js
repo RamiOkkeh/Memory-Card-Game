@@ -3,6 +3,14 @@
 // starting the game the first time:
 create(range(16), 8);
 
+//placing and styling the grid
+//randomizing images and their places
+//add start again option
+//hanlde user errors and prevent them from breaking the game (ex: prevent three clicks on a row)
+
+//keep track of the user score and personal
+//add a multiple difficulties
+ 
 
 
 // creating and recreating the game interface
@@ -81,7 +89,7 @@ function Game(imgNum) {
 		// when trying to match 2 imgs
 		if (counter === 0) {
 			// chack if the 2 imgs are the same
-			if (arr[0].src !== arr[1].src) {
+			if (arr[0].src !== arr[1].src) {  
 				// if they are not, give the player a some time to view them then hide them again
 				$("#hide").show();
 				setTimeout(function () { 
@@ -141,9 +149,3 @@ function hard(){
 }
 
 
-//randomizing images and their places
-//placing and styling the grid
-//keep track of the user score and personal
-//hanlde user errors and prevent them from breaking the game (ex: prevent three clicks on a row)
-//add a multiple difficulties
-//add start again option 
