@@ -21,7 +21,6 @@ different images each game to keep you on your toes.
 
 ## Key Files
 
-1 [props]()
-
-- Contains _imagesSrc_, an array of the images used for the game play.
-- Adds a few helper functions like _randomImages_ which returns a random sub-array from _imagesSrc_ with length based on the parameter given \(8 by default\), for making the game loop.
+1. [props](https://github.com/RamiOkkeh/Memory-Card-Game/blob/master/props.js)
+   - Contains _imagesSrc_, an array of the images used for the game play.
+   - Adds a few helper functions like _randomImages_ which returns a random sub-array from _imagesSrc_ with length based on the parameter given \(8 by default\), for making the game loop.
