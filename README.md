@@ -13,6 +13,12 @@ Cute Little Game of match the images
 How good is your memory, try out this game to figure it out! it offers 2 modes of dificulty with many
 different images each game to keep you on your toes.
 
+## Install
+
+1. Clone this repo
+2. Double click index.html
+3. Enjoy :\)
+
 ## Technologies
 
 - CSS used to create a grid to display the images, and style the page.
