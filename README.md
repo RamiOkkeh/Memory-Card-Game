@@ -10,4 +10,4 @@ Cute Little Game of match the images
     </a>
 </div>
 
-<div class="redbox"></div>
+<div class="redbox">eidjief</div>
