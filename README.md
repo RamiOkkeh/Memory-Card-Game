@@ -1,4 +1,4 @@
-<link href="./readme.css" rel="stylesheet" media="all" type="text/css" />
+<link href="https://github.com/RamiOkkeh/Memory-Card-Game/blob/master/readme.css" rel="stylesheet" media="all" type="text/css" />
 
 # Memory
 
