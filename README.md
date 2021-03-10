@@ -36,4 +36,4 @@ different images each game to keep you on your toes.
    - Creates the frame for the grid.
    - Handles user input and frame styling.
 
-## Deployed Link [Memory](https://memory-game-1.herokuapp.com/index.html)
+## Deployed Link: [Memory](https://memory-game-1.herokuapp.com/index.html)
