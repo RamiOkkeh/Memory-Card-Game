@@ -9,3 +9,5 @@ Cute Little Game of match the images
         <img src="header.gif" class="img" align="center" alt="Memory-perview"/>
     </a>
 </div>
+
+<div class="redbox"></div>
