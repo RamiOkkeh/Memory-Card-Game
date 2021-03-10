@@ -2,7 +2,7 @@
 title: Memory
 ---
 
-<link rel="stylesheet" type="text/css" media="all" href="readme.css" />
+<link rel="stylesheet" type="text/css" href="readme.css" />
 
 # Memory
 
