@@ -8,4 +8,7 @@ Cute Little Game of match the images
     </a>
 </div>
 
-<div class="redbox">eidjief</div>
+## Description
+
+How good is your memory, try out this game to figure it out! it offers 2 modes of dificulty with many
+different images each game to keep you on your toes.

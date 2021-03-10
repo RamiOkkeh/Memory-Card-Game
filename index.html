@@ -1,43 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Memory game</title>
-	<script src="jquery.js"></script>
-	<script type="text/javascript" src="data-base.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<div id="main-body">
-	<div id="head">
-		<h1>Memory Game</h1>
-	</div>
+  <head>
+    <title>Memory game</title>
+    <link rel="icon" href="fav.png" />
+    <script src="jquery.js"></script>
+    <script type="text/javascript" src="data-base.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div id="main-body">
+      <div id="head">
+        <h1>Memory Game</h1>
+      </div>
 
-	<div id="par">
-		<p>Try To Find The Matching Photos</p>
-	</div>
+      <div id="par">
+        <p>Try To Find The Matching Photos</p>
+      </div>
 
-	<div id="level">
-		<input type="button" value="Normal" id="normal" onclick= "normal()">
-		<input type="button" value="Hard" id="hard" onclick="hard()">
-	</div>
+      <div id="level">
+        <input type="button" value="Normal" id="normal" onclick="normal()" />
+        <input type="button" value="Hard" id="hard" onclick="hard()" />
+      </div>
 
-	<div id="frame">
-		
-	</div>
+      <div id="frame"></div>
 
+      <div id="scores">
+        <h2 id="best"></h2>
+        <h2 id="score">Score: 0</h2>
+      </div>
 
-	<div id="scores">
-		<h2 id="best"></h2>
-		<h2 id="score">Score: 0</h2>
-	</div>
+      <div id="hide"></div>
+    </div>
 
-	<div id="hide">
-	</div>
-	
-   </div>
-
-
-
-	<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
