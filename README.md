@@ -23,4 +23,9 @@ different images each game to keep you on your toes.
 
 1. [props](https://github.com/RamiOkkeh/Memory-Card-Game/blob/master/props.js)
    - Contains _imagesSrc_, an array of the images used for the game play.
-   - Adds a few helper functions like _randomImages_ which returns a random sub-array from _imagesSrc_ with length based on the parameter given \(8 by default\), for making the game loop.
+   - Adds a few helper functions for making the game loop, like _randomImages_ which returns a random sub-array from _imagesSrc_ with length based on the parameter given \(8 by default\).
+2. [script](https://github.com/RamiOkkeh/Memory-Card-Game/blob/master/script.js)
+   - Handles the creation of game loop.
+   - Sets the game dificulty.
+   - Creates the frame for the grid.
+   - Handles user input and frame styling.
