@@ -1,8 +1,4 @@
----
-title: Memory
----
-
-<link rel="stylesheet" type="text/css" href="readme.css" />
+<link href="./readme.css" rel="stylesheet" type="text/css" />
 
 # Memory
 
